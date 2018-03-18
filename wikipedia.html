@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Wikipedia Made Easy</title>
+    <link href="https://fonts.googleapis.com/css?family=Economica:400,400i,700" rel="stylesheet">
+    <link href="wikipedia.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="wikipedia.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+			  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+			  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class = "container">
+      <div id="searchBar" class="searchBar">
+    	  <form>
+    		  <input class="searchBarInput" placeholder="Search Wikipedia..."
+            type="search" value="" name="search" id="search">
+    		  <input class="searchBarBtn" type="submit" value="">
+    		  <div class="searchBarIcon"><i class="fa fa-search"></i></div>
+          <div class="clearSearch"><i class="fa fa-times"></i></div>
+    	  </form>
+      </div>
+      <div class="randomPageBtn"><a class="fa fa-exclamation" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"></a></div>
+      <div class="wikipediaResults"></div>
+    </div>
+  </div>
+  </body>
+</html>
