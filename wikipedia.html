@@ -1,9 +1,13 @@
 <!doctype html>
 <html>
   <head>
+    <!-- Contact: Brandon.Murch@protonmail.com -->
+    <meta name="author" content="Brandon Murch">
+    <meta name="description" content="A wikipedia viewer.">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <title>Wikipedia Made Easy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Economica:400,400i,700" rel="stylesheet">
     <link href="wikipedia.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -11,22 +15,24 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
 			  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
 			  crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
-  <body>
-    <div class = "container">
-      <div id="searchBar" class="searchBar">
+  <body class="background">
+    <article class = "container">
+      <section class="searchBar">
     	  <form>
-    		  <input class="searchBarInput" placeholder="Search Wikipedia..."
-            type="search" value="" name="search" id="search">
-    		  <input class="searchBarBtn" type="submit" value="">
-    		  <div class="searchBarIcon"><i class="fa fa-search"></i></div>
-          <div class="clearSearch"><i class="fa fa-times"></i></div>
+    		  <input class="searchBar__input layout--light searchBar__text"
+          placeholder="Search Wikipedia..." type="search" value="" name="search">
+    		  <input class="button button--submit" type="submit" value="">
+    		  <div class="button button--searchBar"><i class="fa fa-search button__icon"></i></div>
+          <div class="searchBar__clear"><i class="fa fa-times button__icon button__icon--times"></i></div>
     	  </form>
+      </section>
+      <div class="button button--randomPage">
+        <a class="fa fa-exclamation button__icon button__icon--exclamation"
+          href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"></a>
       </div>
-      <div class="randomPageBtn"><a class="fa fa-exclamation" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"></a></div>
-      <div class="wikipediaResults"></div>
+      <section class="searchResults"></section>
     </div>
-  </div>
+  </article>
   </body>
 </html>

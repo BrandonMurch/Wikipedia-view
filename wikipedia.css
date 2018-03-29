@@ -1,23 +1,20 @@
-html, body {
+/*
+
+This document is written in BEM.
+Block = .block
+Element = .block__element
+Modifier = .block__element--modifier || .block--modifier
+
+*/
+
+/* Block ******************************************************************/
+
+.background {
   height: 100%;
   width: 100%;
   background-image: url(https://s20.postimg.org/dj5remcbh/dark_wall.png);
   background-repeat: repeat;
-  text-shadow: 1px 1px 1px #333;
-  font-family: 'Economica',sans-serif;
   overflow-x: hidden;
-  color: black;
-  font-size: 30px;
-  font-weight: bold;
-
-}
-
-h2 {
-  font-size: 30px;
-}
-
-a {
-  text-decoration: none;
 }
 
 .container {
@@ -26,7 +23,6 @@ a {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-
 }
 
 .searchBar {
@@ -39,24 +35,50 @@ a {
   float: right;
   overflow: hidden;
   -webkit-transition: width 0.6s;
-  -moz-transition: width 0.6s;
-  transition: width 0.6s;
+     -moz-transition: width 0.6s;
+          transition: width 0.6s;
   -webkit-backface-visibility: hidden;
   border-radius: 70px
   box-shadow: 1px 1px 1px #000;
-
 }
 
-.searchBarInput, .ui-autocomplete, .eachResult {
-  background-image: url(https://s20.postimg.org/64gflosul/solid.png);
-  opactiy: 0.9;
-  box-shadow: 1px 1px 1px #000;
-
+.button {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 70px;
+  color: #fff;
+  background: rgba(120, 120, 120, 1);
+  font-size: 40px;
+  -webkit-box-shadow: 1px 1px 1px #000;
+     -moz-box-shadow: 1px 1px 1px #000;
+          box-shadow: 1px 1px 1px #000;
+  -webkit-box-shadow: inset 0 0 10px #000;
+     -moz-box-shadow: inset 0 0 10px #000;
+          box-shadow: inset 0 0 10px #000;
 }
 
-.searchBarInput {
+.searchResults{
+  width: 100%;
+  position: relative;
+  top: 200px;
+}
+
+/* Element ****************************************************************/
+
+                /* Modifying Jquery UI autocomplete text*/
+.searchBar__text, .ui-autocomplete {
   font-size: 30px;
+  color: black;
   font-weight: bold;
+  text-shadow: 1px 1px 1px #333;
+  font-family: 'Economica',sans-serif;
+}
+
+.searchBar__input {
   height: 70px;
   width: 100%;
   margin: 0;
@@ -66,10 +88,9 @@ a {
   z-index: 10;
   border-radius: 70px;
   padding-left: 30px;
-  font-family: 'Economica', sans-serif;
 }
 
-.clearSearch {
+.searchBar__clear {
   position: absolute;
   right: 90px;
   top: 8px;
@@ -77,38 +98,58 @@ a {
   font-size: 40px;
   z-index: 11;
   cursor: pointer;
-
 }
 
+.searchResults__wikipediaLink {
+  text-decoration: none;
+}
+
+.searchResults__wikipediaPage {
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin: 20px;
+}
+
+.searchResults__wikipediaTitle{
+  text-decoration: none;
+  color: #000;
+  font-family: 'Economica',sans-serif;
+}
+
+.searchResults__wikipediaText {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 5px;
+}
+
+/* Modifier ***************************************************************/
+
+              /* Modifying Jquery UI autocomplete background*/
+.layout--light, .ui-autocomplete {
+  background-image: url(https://s20.postimg.org/64gflosul/solid.png);
+  box-shadow: 1px 1px 1px #000;
+}
+                /* Removing hovering part of Jquery UI autocomplete*/
 .ui-helper-hidden-accessible {
   display: none;
 }
-
+                /* Modifying Jquery UI autocomplete*/
 .ui-autocomplete {
   border-radius: 10px;
   top: 160px !important;
-
 }
 
-.searchBarIcon, .searchBarBtn, .randomPageBtn {
-  width: 70px;
-  height: 70px;
-  cursor: pointer;
-  border-radius: 70px;
-  background: rgba(120, 120, 120, 1);
-  font-size: 40px;
-  -moz-box-shadow:    inset 0 0 10px #000000;
-  -webkit-box-shadow: inset 0 0 10px #000000;
-  box-shadow:         inset 0 0 10px #000000;
+.searchBar--open {
+  width: 78%
 }
 
-.searchBarIcon, .searchBarBtn {
-  position: absolute;
-  top: 0;
-  right: 0;
+.searchBar__text--wikipediaText{
+  font-size: 20px;
+  font-weight: normal;
+  color: rgba(40, 40, 40, 1);
 }
 
-.searchBarBtn{
+.button--submit{
   background: #fff; /* IE needs this */
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
   filter: alpha(opacity=0); /* IE 5-7 */
@@ -117,78 +158,29 @@ a {
   border: none;
   outline: none;
   z-index: -1;
-  box-shadow: 1px 1px 1px #000;
-
-
 }
 
-.searchBarIcon {
-  color: #fff;
+.button--searchBar {
   z-index: 15;
 }
 
-.fa-search, .fa-exclamation {
+.button__icon {
   height: 100%;
   width: 100%;
   text-align: center;
   margin-top: 15px;
 }
 
-.searchBarOpen {
-  width: 78%
-}
-
-.searchBarOpen .searchBarIcon {
-  z-index: 16
-}
-
-.randomPageBtn {
-  position: absolute;
+.button--randomPage {
   top: 110px;
   right: 0;
-  color: #fff;
-  border-radius: 70px;
-  box-shadow: 1px 1px 1px #000;
-  -moz-box-shadow:    inset 0 0 10px #000000;
-  -webkit-box-shadow: inset 0 0 10px #000000;
-  box-shadow:         inset 0 0 10px #000000;
-
 }
 
-.fa-exclamation {
-  z-index: 10
-  cursor: pointer;
+.button__icon--exclamation {
+  z-index: 10;
+  text-decoration: none;
   color: #fff;
 }
-
-.wikipediaResults{
-  width: 100%;
-  position: relative;
-  top: 200px;
-}
-
-.eachResult {
-  border-radius: 10px;
-  padding: 5px 20px;
-  margin: 20px;
-  color: black;
-  box-shadow: 1px 1px 1px #000;
-
-}
-
-.wikiTitle {
-  margin-bottom: 0;
-  padding-bottom: 0;
+.button__icon--times{
   margin-top: 5px;
-
-}
-
-.wikiText {
-  font-size: 20px;
-  font-weight: normal;
-  margin-top: 0;
-  padding-top: 0;
-  margin-bottom: 5px;
-  color: rgba(40, 40, 40, 1);
-
 }
